@@ -1,17 +1,111 @@
+@import "tailwindcss";
+
 :root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --accent: #1a7a6e;
+  --accent-mid: #2a9d8f;
+  --accent-light: #5bbfb5;
+
+  --text-1: #0d1e1c;
+  --text-2: #3a5c58;
+  --text-3: #6b8c88;
+
+  --border: rgba(13, 30, 28, 0.08);
+
+  --page-background: #edf8f6;
+  --section-background: #f7fcfb;
+  --dark-background: #071f1c;
 }
 
-html,
-body,
-#root {
-  min-width: 320px;
-  min-height: 100%;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  min-width: 320px;
+  background: var(--section-background);
+  color: var(--text-1);
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-accent-mid {
+  background-color: var(--accent-mid);
+}
+
+.border-soft {
+  border-color: var(--border);
+}
+
+.page-container {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: 110px;
+}
+
+.soft-shadow {
+  box-shadow: 0 22px 60px rgba(13, 30, 28, 0.1);
+}
+
+.card-shadow {
+  box-shadow: 0 12px 35px rgba(13, 30, 28, 0.08);
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle at 72% 34%,
+      rgba(91, 191, 181, 0.2),
+      transparent 30%
+    ),
+    linear-gradient(180deg, #e8f6f4 0%, #eef9f7 100%);
+}
+
+.phone-shadow {
+  box-shadow:
+    0 30px 65px rgba(13, 30, 28, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.dark-gradient {
+  background:
+    radial-gradient(
+      circle at 74% 50%,
+      rgba(42, 157, 143, 0.22),
+      transparent 38%
+    ),
+    #071f1c;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section-space {
+    padding-block: 72px;
+  }
 }
